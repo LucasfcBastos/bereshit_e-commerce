@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../assets/font/NunitoSans.ttf") format("truetype");
+    font-weight: bold;
+}
+
+:root {
+    --Cor-Preto-Transparente: rgba(0, 0, 0, 0.900);
+    --Cor-Principal: #03BDA4;
+}
+
+body {
+    margin: 0;
+}
+
+p, a {
+    font-family: "NunitoSans";
+    font-size: 1em;
+    margin: 0;
+}

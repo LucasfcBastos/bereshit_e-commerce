@@ -1,0 +1,40 @@
+header {
+    background-color: var(--Cor-Preto-Transparente);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 0.5em;
+    min-height: 2em;
+    width: auto;
+}
+
+header .menu {
+    display: flex;
+    gap: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 5px 1px 5px;
+    margin-bottom: -1px;
+}
+
+header a:hover {
+    border-bottom: 2px solid var(--Cor-Principal);
+}
+
+header a.active {
+    color: var(--Cor-Principal);
+    border-bottom: 2px solid var(--Cor-Principal);
+}
