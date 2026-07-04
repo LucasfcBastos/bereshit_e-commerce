@@ -12,6 +12,10 @@
     transition: all 0.3s ease;
 }
 
+.card p {
+    cursor: pointer;
+}
+
 .card.grid img {
     width: 100%;
     aspect-ratio: 1 / 1;
