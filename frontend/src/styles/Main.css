@@ -38,6 +38,10 @@ main .hero-image::before {
     z-index: 1;
 }
 
+main .recent {
+    padding: 35px;
+}
+
 main .top {
     display: flex;
     justify-content: space-between;

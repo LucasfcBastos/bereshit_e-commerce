@@ -1,6 +1,9 @@
 import HeaderTop from "../../components/header/HeaderTop.jsx";
+import CampRecent from "../../components/camp/CampRecent.jsx";
 
 import Art from "../../assets/img/BMW.png";
+
+import "../../styles/Main.css";
 
 function LandingPage() {
     return (
@@ -8,6 +11,7 @@ function LandingPage() {
             <HeaderTop />
 
             <main className="first page">
+
                 <section className="hero">
                     <div className="hero-text">
                         <h1>O CARRO CERTO MUDA TUDO.</h1>
@@ -18,6 +22,11 @@ function LandingPage() {
                         <img src={Art} alt="BMW" />
                     </div>
                 </section>
+
+                <section className="recent">
+                    <CampRecent />
+                </section>
+
             </main>
         </div>
     );

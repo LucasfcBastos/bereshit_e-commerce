@@ -9,3 +9,22 @@
     flex-direction: column;
     gap: 25px;
 }
+
+.camp.standard {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.camp.standard .recent-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.camp.standard .recent-cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+    gap: 25px;
+}
