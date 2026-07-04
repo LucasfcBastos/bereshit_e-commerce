@@ -78,6 +78,15 @@ main .top div button img {
     margin: 0;
 }
 
+main .half {
+    display: flex;
+    gap: 50px;
+}
+
+main .list {
+    width: 100%;
+}
+
 main .pagination {
     margin-top: 25px;
     display: flex;

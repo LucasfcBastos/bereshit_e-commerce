@@ -28,3 +28,43 @@
     grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
     gap: 25px;
 }
+
+
+.camp.standard.filter {
+    height: fit-content;
+    min-width: 15%;
+}
+
+.camp.standard.filter label {
+    display: flex;
+}
+
+.radio-item input {
+    display: none;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.radio-item p::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--Cor-Cinza);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.radio-item input:checked + p::before {
+    border: 2px solid var(--Cor-Principal);
+    box-shadow: inset 0 0 0 4px var(--Cor-Principal);
+}
