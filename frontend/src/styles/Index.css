@@ -5,16 +5,39 @@
 }
 
 :root {
+    --Cor-Background: rgb(237, 237, 237, 1);
     --Cor-Preto-Transparente: rgba(0, 0, 0, 0.900);
-    --Cor-Principal: #03BDA4;
+    --Cor-Principal: rgb(3, 189, 164, 1);
 }
 
 body {
     margin: 0;
+    background-color: var(--Cor-Background);
 }
 
-p, a {
+h1, p, a {
     font-family: "NunitoSans";
-    font-size: 1em;
     margin: 0;
+    cursor: default;
+}
+
+h1 {
+    font-size: 1.375em;
+}
+
+p {
+    font-size: 1,03125em;
+}
+
+a {
+    font-size: 0.6875em;
+}
+
+main.first {
+    margin-top: 72px;
+}
+
+main.container {
+    padding: 50px;
+    min-height: calc(100vh - 173px);
 }

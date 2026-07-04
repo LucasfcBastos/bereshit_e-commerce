@@ -28,6 +28,7 @@ header a {
     text-decoration: none;
     padding: 0px 5px 1px 5px;
     margin-bottom: -1px;
+    cursor: pointer;
 }
 
 header a:hover {
@@ -37,4 +38,5 @@ header a:hover {
 header a.active {
     color: var(--Cor-Principal);
     border-bottom: 2px solid var(--Cor-Principal);
+    cursor: default;
 }

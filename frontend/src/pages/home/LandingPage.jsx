@@ -1,4 +1,4 @@
-import HeaderTop from '../components/header/HeaderTop.jsx'
+import HeaderTop from '../../components/header/HeaderTop.jsx'
 
 function LandingPage() {
     return (
