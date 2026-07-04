@@ -7,7 +7,9 @@
 :root {
     --Cor-Background: rgb(237, 237, 237, 1);
     --Cor-Preto-Transparente: rgba(0, 0, 0, 0.900);
+    --Cor-Cinza: rgb(128, 128, 128, 1);
     --Cor-Principal: rgb(3, 189, 164, 1);
+    --Cor-Principal-Dark: rgb(0, 92, 97, 1);
 }
 
 body {
@@ -33,6 +35,11 @@ a {
     font-size: 0.6875em;
 }
 
+button {
+    font-family: "NunitoSans";
+    cursor: pointer;
+}
+
 main.first {
     margin-top: 72px;
 }
@@ -40,4 +47,10 @@ main.first {
 main.container {
     padding: 50px;
     min-height: calc(100vh - 173px);
+}
+
+@media (max-width: 768px) {
+    main.container {
+        padding: 25px;
+    }
 }

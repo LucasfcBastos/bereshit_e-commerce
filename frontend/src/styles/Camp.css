@@ -1,5 +1,11 @@
-.camp.icon {
+.camp.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+    gap: 25px;
+}
+
+.camp.line {
+    display: flex;
+    flex-direction: column;
     gap: 25px;
 }

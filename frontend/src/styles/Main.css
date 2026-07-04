@@ -1,0 +1,35 @@
+main .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+main .top div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main .top div button {
+    border-radius: 12px;
+    padding: 10px 10px 6px 10px;
+    border: 2px solid var(--Cor-Cinza);
+    background-color: #fff;
+}
+
+main .top div button:hover {
+    border: 2px solid var(--Cor-Principal);
+}
+
+main .top div button.active {
+    background-color: var(--Cor-Principal);
+    border-radius: 12px;
+    border: 2px solid var(--Cor-Principal-Dark);
+    cursor: default;
+}
+
+main .top div button img {
+    height: 20px;
+    margin: 0;
+}

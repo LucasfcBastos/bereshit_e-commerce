@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { getCars } from "../../services/carService";
 
 import HeaderTop from "../../components/header/HeaderTop";
-import CardIcon from "../../components/cards/CardIcon";
+import SelecterCard from "../../components/cards/SelecterCard";
+import CardGrid from "../../components/cards/CardGrid";
+import CardLine from "../../components/cards/CardLine";
 
 import "../../styles/Camp.css";
+import "../../styles/Main.css";
 
 function ListCars() {
+    const [viewMode, setViewMode] = useState("grid");
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
@@ -23,18 +27,25 @@ function ListCars() {
             <HeaderTop />
 
             <main className="container first">
-                <h1 style={{ marginBottom: "25px" }}>TODOS OS CARROS</h1>
-
-                <div className="camp icon">
-                    {cars.map((car) => (
-                        <CardIcon 
-                            nome={car.nome}
-                            ano={car.ano}
-                            km={car.km}
-                            preco={car.preco}
-                        />
-                    ))}
+                <div className="top">
+                    <h1>TODOS OS CARROS</h1>
+                    <SelecterCard viewMode={viewMode} setViewMode={setViewMode} />
                 </div>
+
+                {viewMode === "grid" ? (
+                    <div className="camp grid">
+                        {cars.map((car) => (
+                            <CardGrid nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="camp line">
+                        {cars.map((car) => (
+                            <CardLine nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
+                        ))}
+                    </div>
+                )}
+
             </main>
         </div>
     );

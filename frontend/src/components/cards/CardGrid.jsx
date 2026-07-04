@@ -1,9 +1,9 @@
 import "../../styles/Card.css";
 
-function CardIcon({ nome, ano, km, preco }) {
+function CardGrid({ nome, ano, km, preco }) {
     return (
         <>
-            <div className="card">
+            <div className="card grid">
                 <img src="" />
                 <p>{nome}</p>
                 <p>{ano} - {km} Km</p>
@@ -13,4 +13,4 @@ function CardIcon({ nome, ano, km, preco }) {
     )
 }
 
-export default CardIcon;
+export default CardGrid;
