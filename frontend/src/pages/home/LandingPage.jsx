@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { getCars } from "../../services/carService";
+
 import HeaderTop from "../../components/header/HeaderTop.jsx";
 import CampRecent from "../../components/camp/CampRecent.jsx";
 import CampBrand from "../../components/camp/CampBrand.jsx";
@@ -7,6 +10,18 @@ import Art from "../../assets/img/BMW.png";
 import "../../styles/Main.css";
 
 function LandingPage() {
+    const [existCar, setExistCar] = useState([]);
+    const hasCars = existCar.length > 0;
+
+    useEffect(() => {
+        const fetchCars = async () => {
+            const data = await getCars();
+            setExistCar(data);
+        };
+
+        fetchCars();
+    }, []);
+
     return (
         <div>
             <HeaderTop />
@@ -24,13 +39,21 @@ function LandingPage() {
                     </div>
                 </section>
 
-                <section className="recent">
-                    <CampRecent />
-                </section>
+                {hasCars ? (
+                    <>
+                        <section className="recent">
+                            <CampRecent />
+                        </section>
 
-                <section className="marq">
-                    <CampBrand />
-                </section>
+                        <section className="marq">
+                            <CampBrand />
+                        </section>
+                    </>
+                ) : (
+                    <div style={{ padding: "25px" }}>
+                        <h1 style={{textAlign: "center"}}>NO MOMENTO NÃO HÁ VEICULOS EM NOSSO ESTOQUE</h1>
+                    </div>
+                )}
 
             </main>
         </div>

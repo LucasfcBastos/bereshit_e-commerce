@@ -16,6 +16,7 @@ function ListCars() {
     const [searchParams] = useSearchParams();
     const [viewMode, setViewMode] = useState("grid");
     const [cars, setCars] = useState([]);
+    const hasCars = cars.length > 0;
     const [currentPage, setCurrentPage] = useState(1);
     const carsPerPage = 15;
     const brands = [...new Set(cars.map(car => car.marca))];
@@ -50,38 +51,47 @@ function ListCars() {
 
             <main className="container first">
                 
-                <div className="top">
-                    <h1>TODOS OS CARROS</h1>
-                    <SelecterCard viewMode={viewMode} setViewMode={setViewMode} />
-                </div>
 
-                <div className="half">
+                {hasCars ? (
+                    <>
+                        <div className="top">
+                            <h1>TODOS OS CARROS</h1>
+                            <SelecterCard viewMode={viewMode} setViewMode={setViewMode} />
+                        </div>
 
-                    {hasFilter && (
-                        <BrandFilter brands={brands} selectedBrand={selectedBrand} setSelectedBrand={setSelectedBrand} />
-                    )}
+                        <div className="half">
 
-                    <div className="list">
-                        {viewMode === "grid" ? (
-                            <div className="camp grid">
-                                {currentCars.map((car) => (
-                                    <CardGrid key={car.key} id={car.id} image={car.images[0]} nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
-                                ))}
+                            {hasFilter && (
+                                <BrandFilter brands={brands} selectedBrand={selectedBrand} setSelectedBrand={setSelectedBrand} />
+                            )}
+
+                            <div className="list">
+                                {viewMode === "grid" ? (
+                                    <div className="camp grid">
+                                        {currentCars.map((car) => (
+                                            <CardGrid key={car.key} id={car.id} image={car.images[0]} nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="camp line">
+                                        {currentCars.map((car) => (
+                                            <CardLine key={car.key} id={car.id} image={car.images[0]} nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
+                                        ))}
+                                    </div>
+                                )}
+
+                                {totalPages > 1 && (
+                                    <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
+                                )}
                             </div>
-                        ) : (
-                            <div className="camp line">
-                                {currentCars.map((car) => (
-                                    <CardLine key={car.key} id={car.id} image={car.images[0]} nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
-                                ))}
-                            </div>
-                        )}
 
-                        {totalPages > 1 && (
-                            <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
-                        )}
+                        </div>
+                    </>
+                ) : (
+                    <div>
+                        <h1 style={{textAlign: "center"}}>NO MOMENTO NÃO HÁ VEICULOS EM NOSSO ESTOQUE</h1>
                     </div>
-
-                </div>
+                )}
 
             </main>
         </div>
