@@ -12,6 +12,14 @@
     --Cor-Principal-Dark: rgb(0, 92, 97, 1);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     background-color: var(--Cor-Background);
@@ -28,7 +36,7 @@ h1 {
 }
 
 p {
-    font-size: 1,03125em;
+    font-size: 1.03125em;
 }
 
 a {
@@ -53,8 +61,24 @@ main.container {
     color: var(--Cor-Principal-Dark);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     main.container {
-        padding: 25px;
+        padding: 35px;
+    }
+}
+
+@media (max-width: 640px) {
+    main.container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    main.container {
+        padding: 12px;
+    }
+
+    main.first {
+        margin-top: 68px;
     }
 }

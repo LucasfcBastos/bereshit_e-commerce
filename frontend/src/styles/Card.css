@@ -37,6 +37,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-left: 12px;
+    min-width: 0;
 }
 
 .card.line .info .principal {
@@ -47,4 +48,18 @@
 
 .recent-cars .card.grid {
     border: 2px solid var(--Cor-Cinza);
+}
+
+@media (max-width: 640px) {
+    .card.line img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 380px) {
+    .card.line img {
+        width: 80px;
+        height: 80px;
+    }
 }

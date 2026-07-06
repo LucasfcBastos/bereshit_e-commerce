@@ -73,6 +73,7 @@ main .marq .card-rod img {
     height: 100%;
     object-fit: contain;
     transition: transform .4s ease;
+    border-radius: 100%;
 }
 
 main .marq .card-rod:hover img {
@@ -92,10 +93,11 @@ main .marq .card-rod:hover img {
 main .marq .card-rod div {
     position: absolute;
     bottom: 11px;
-    width: calc(100% - 50px);
-    padding: 25px;
+    width: 100%;
+    height: 45%;
     background-color: var(--Cor-Background);
     text-align: center;
+    align-content: center;
 }
 
 main .top {
@@ -148,15 +150,6 @@ main .pagination {
     display: flex;
     justify-content: center;
     gap: 10px;
-}
-
-main .pagination button {
-    border-radius: 12em;
-    min-width: 40px;
-    padding: 10px 10px 10px 10px;
-    border: 0;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 main .pagination button.active {
@@ -214,4 +207,134 @@ main .highlight .info {
 
 main .highlight .info hr {
     margin: 1.5em 0em;
+}
+
+@media (max-width: 1024px) {
+    main .hero-text h1:nth-of-type(2) {
+        font-size: calc(1.375em * 1.3);
+    }
+
+    main .recent,
+    main .marq {
+        padding: 25px;
+    }
+
+    main .marq .brands-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    main .half {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    main .hero-text {
+        margin-left: 15px;
+        max-width: calc(100% - 30px);
+    }
+
+    main .hero-text h1 {
+        font-size: 1.15em;
+    }
+
+    main .hero-text h1:nth-of-type(2) {
+        font-size: calc(1.15em * 1.35);
+        margin-bottom: 15px;
+    }
+
+    main .hero-text p {
+        font-size: 0.85em;
+    }
+
+    main .recent,
+    main .marq {
+        padding: 15px;
+    }
+
+    main .marq .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    main .marq .card-rod div {
+        width: calc(100% - 20px);
+        padding: 12px;
+    }
+
+    main .top {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    main .pagination {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    main .pagination button {
+        min-width: 34px;
+        padding: 8px;
+    }
+
+    main .highlight {
+        flex-direction: column;
+    }
+
+    main .highlight > img {
+        width: 100%;
+        order: 1;
+    }
+
+    main .highlight .all-images {
+        order: 2;
+        flex-direction: row;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    main .highlight .all-images div {
+        flex: 0 0 auto;
+        width: 70px;
+    }
+
+    main .highlight .info {
+        order: 3;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    main .hero,
+    main .hero-image img {
+        height: calc(100dvh - 68px);
+    }
+
+    main .hero-text h1 {
+        font-size: 1em;
+    }
+
+    main .hero-text h1:nth-of-type(2) {
+        font-size: calc(1em * 1.3);
+    }
+
+    main .hero-text p {
+        font-size: 0.75em;
+    }
+
+    main .marq .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    main .marq .card-rod div {
+        width: calc(100% - 12px);
+        padding: 8px;
+    }
+
+    main .highlight .all-images div {
+        width: 55px;
+    }
 }
