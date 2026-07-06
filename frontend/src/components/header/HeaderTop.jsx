@@ -6,8 +6,7 @@ import "../../styles/Header.css";
 
 const menuItems = [
     {key: "home", label: "INÍCIO", url: "/"},
-    {key: "cars", label: "CARROS", url: "/cars"},
-    {key: "about", label: "SOBRE", url: "/about"}
+    {key: "cars", label: "CARROS", url: "/cars"}
 ]
 
 function HeaderTop() {

@@ -122,6 +122,8 @@ main .top div button {
 
 main .top div button:hover {
     border: 2px solid var(--Cor-Principal);
+    background-color: #fff;
+    color: inherit;
 }
 
 main .top div button.active {

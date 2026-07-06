@@ -24,12 +24,7 @@ function ListCars() {
     const [selectedBrand, setSelectedBrand] = useState( searchParams.get("brand") || "all" );
 
     useEffect(() => {
-        const fetchCars = async () => {
-            const data = await getCars();
-            setCars(data);
-        };
-
-        fetchCars();
+        setCars(getCars());
     }, []);
 
     const filteredCars = selectedBrand === "all" ? cars : cars.filter(car => car.marca === selectedBrand);

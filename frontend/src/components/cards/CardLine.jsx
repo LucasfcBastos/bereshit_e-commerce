@@ -1,10 +1,10 @@
 import "../../styles/Card.css";
 
-function CardLine({ nome, ano, km, preco }) {
+function CardLine({ image, nome, ano, km, preco }) {
     return (
         <>
             <div className="card line">
-                <img src="" />
+                <img src={image} alt={nome} />
                 <div className="info">
                     <div className="principal">
                         <p>{nome}</p>

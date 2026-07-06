@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import Roda from "../../assets/img/roda.png";
 
-function CampRecent() {
+function CampBrand() {
     const [brands, setBrands] = useState([]);
     const navigate = useNavigate();
 
@@ -29,4 +29,4 @@ function CampRecent() {
     )
 }
 
-export default CampRecent;
+export default CampBrand;

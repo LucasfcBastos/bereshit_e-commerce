@@ -1,5 +1,5 @@
 import { getCars } from "../../services/carService";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import HeaderTop from "../../components/header/HeaderTop";
@@ -24,12 +24,7 @@ function ViewCars() {
     };
     
     useEffect(() => {
-        const fetchCars = async () => {
-            const data = await getCars();
-            setCars(data);
-        };
-
-        fetchCars();
+        setCars(getCars());
     }, []);
 
     const car = cars.find((item) => item.id === Number(id));
@@ -65,7 +60,7 @@ function ViewCars() {
                         ))}
                     </div>
 
-                    <img src={car.images[selectedImage]} />
+                    <img src={car.images[selectedImage]} alt={car.nome} />
 
                     <div className="info">
                         <h1>{car.nome}</h1>

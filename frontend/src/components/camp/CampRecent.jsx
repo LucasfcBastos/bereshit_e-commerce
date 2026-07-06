@@ -11,13 +11,7 @@ function CampRecent() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchCars = async () => {
-            const data = await getCars();
-
-            setRecentCars(data.slice(-5).reverse());
-        };
-
-        fetchCars();
+        setRecentCars(getCars().slice(-5).reverse());
     }, []);
 
     return (

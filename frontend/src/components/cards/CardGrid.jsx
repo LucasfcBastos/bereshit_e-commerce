@@ -8,7 +8,7 @@ function CardGrid({ id, image, nome, ano, km, preco }) {
     return (
         <>
             <div className="card grid" onClick={() => navigate(`/cars/${id}`)}>
-                <img src={image} />
+                <img src={image} alt={nome} />
                 <p>{nome}</p>
                 <p>{ano} - {km} Km</p>
                 <p>ENT: R$ {preco.toLocaleString("pt-BR")}</p>

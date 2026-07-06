@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import LandingPage from '../pages/home/LandingPage.jsx'
 import ListCars from '../pages/cars/ListCars.jsx'
@@ -11,6 +11,7 @@ function AppRoutes() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/cars" element={<ListCars />} />
                 <Route path="/cars/:id" element={<ViewCars />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
     )

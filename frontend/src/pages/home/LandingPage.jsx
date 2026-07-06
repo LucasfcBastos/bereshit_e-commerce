@@ -14,12 +14,7 @@ function LandingPage() {
     const hasCars = existCar.length > 0;
 
     useEffect(() => {
-        const fetchCars = async () => {
-            const data = await getCars();
-            setExistCar(data);
-        };
-
-        fetchCars();
+        setExistCar(getCars());
     }, []);
 
     return (
