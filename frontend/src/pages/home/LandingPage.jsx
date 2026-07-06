@@ -1,11 +1,21 @@
+import { useState, useEffect } from "react";
+import { getTopBrands } from "../../services/carService";
+
 import HeaderTop from "../../components/header/HeaderTop.jsx";
 import CampRecent from "../../components/camp/CampRecent.jsx";
 
 import Art from "../../assets/img/BMW.png";
+import Roda from "../../assets/img/roda.png";
 
 import "../../styles/Main.css";
 
 function LandingPage() {
+    const [brands, setBrands] = useState([]);
+
+    useEffect(() => {
+        setBrands(getTopBrands());
+    }, []);
+
     return (
         <div>
             <HeaderTop />
@@ -25,6 +35,20 @@ function LandingPage() {
 
                 <section className="recent">
                     <CampRecent />
+                </section>
+
+                <section className="marq">
+                    <h1>ENCONTRE A SUA MARCA</h1>
+                    <div className="brands-grid">
+                        {brands.map((brand) => (
+                            <div key={brand.marca} className="card-rod">
+                                <img src={Roda} alt={brand.marca} />
+                                <div>
+                                    <p>{brand.marca}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </section>
 
             </main>
