@@ -1,5 +1,5 @@
 import { getCars } from "../../services/carService";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import HeaderTop from "../../components/header/HeaderTop";
@@ -12,6 +12,16 @@ function ViewCars() {
     const [cars, setCars] = useState([]);
     const { id } = useParams();
     const [selectedImage, setSelectedImage] = useState(0);
+    const navigate = useNavigate();
+    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+
+    const handleWhatsApp = () => {
+        const message = `Eu vim através do site da Bereshit e estou interessado em saber mais sobre ${car.nome} da marca ${car.marca}, no valor de R$ ${car.preco.toLocaleString("pt-BR")}.`;
+
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+    };
     
     useEffect(() => {
         const fetchCars = async () => {
@@ -42,7 +52,7 @@ function ViewCars() {
 
             <main className="first container">
 
-                <button className="btn back">
+                <button className="btn back" onClick={() => navigate("/cars")}>
                     <p>{"<"}</p>
                 </button>
                 
@@ -67,7 +77,7 @@ function ViewCars() {
                         <p>● 36x: R$ {car.parcelamento[0].toLocaleString("pt-BR")}</p>
                         <p>● 48x: R$ {car.parcelamento[1].toLocaleString("pt-BR")}</p>
                         <hr />
-                        <button>CONVERSAR COM O VENDEDOR</button>
+                        <button onClick={handleWhatsApp}>CONVERSAR COM O VENDEDOR</button>
                     </div>
                 </div>
 

@@ -12,9 +12,8 @@ button:hover {
     color: #fff;
 }
 
-button a {
-    font-size: 1,03125em;
-    text-decoration: none;
+button p {
+    cursor: pointer;
 }
 
 .btn.back {
