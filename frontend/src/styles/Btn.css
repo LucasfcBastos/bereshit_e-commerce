@@ -1,0 +1,26 @@
+button {
+    border-radius: 12em;
+    min-width: 40px;
+    padding: 10px 10px 10px 10px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--Cor-Principal);
+    color: #fff;
+}
+
+button a {
+    font-size: 1,03125em;
+    text-decoration: none;
+}
+
+.btn.back {
+    border-radius: 100%;
+}
+
+main .highlight .info button {
+    width: 100%;
+}

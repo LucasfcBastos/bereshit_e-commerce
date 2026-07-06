@@ -49,6 +49,10 @@ main.container {
     min-height: calc(100vh - 173px);
 }
 
+.paint-text {
+    color: var(--Cor-Principal-Dark);
+}
+
 @media (max-width: 768px) {
     main.container {
         padding: 25px;

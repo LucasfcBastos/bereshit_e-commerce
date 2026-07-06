@@ -63,7 +63,7 @@ function ListCars() {
                         {viewMode === "grid" ? (
                             <div className="camp grid">
                                 {currentCars.map((car) => (
-                                    <CardGrid nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
+                                    <CardGrid image={car.images[0]} nome={car.nome} ano={car.ano} km={car.km} preco={car.preco} />
                                 ))}
                             </div>
                         ) : (

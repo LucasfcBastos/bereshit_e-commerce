@@ -32,6 +32,7 @@ function CampRecent() {
                     {recentCars.map(car => (
                         <CardGrid
                             key={car.id}
+                            image={car.images[0]}
                             nome={car.nome}
                             ano={car.ano}
                             km={car.km}
